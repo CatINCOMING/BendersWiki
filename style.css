@@ -1,0 +1,188 @@
+/* Color Variables for Theming */
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --card-bg: #ffffff;
+    --nav-bg: #ffffff;
+    --accent: #3b82f6;
+    --border: #e5e7eb;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e5e7eb;
+    --card-bg: #1f2937;
+    --nav-bg: #1f2937;
+    --accent: #60a5fa;
+    --border: #374151;
+}
+
+/* Global Reset & Typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-brand a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+#theme-toggle:hover {
+    background-color: var(--border);
+}
+
+/* Layout Containers */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex: 1;
+}
+
+.hero, .hero-small {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Grid & Cards for Categories */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h2, .card-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+/* Article Page Specifics */
+.article-layout {
+    max-width: 800px;
+}
+
+.breadcrumbs {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.wiki-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.5rem;
+}
+
+.wiki-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.wiki-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-media {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--nav-bg);
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+}
+
+.footer-logo {
+    height: 24px;
+    vertical-align: middle;
+    margin-left: 8px;
+    border-radius: 4px;
+}
